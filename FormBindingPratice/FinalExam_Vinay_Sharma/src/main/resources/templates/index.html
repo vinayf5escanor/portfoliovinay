@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<title>Index Page</title>
+</head>
+<body>
+<div th:fragment="header">
+<h1>Vinay Kumar Sharma</h1>
+<h1>Final EXAM</h1>
+</div>
+	<h2>
+		<a th:href="@{/view}">View</a>
+	</h2>
+	<h2>
+		<a th:href="@{/register}">Register New User</a>
+	</h2>
+	<div th:fragment="logout" class="logout"
+		sec:authorize="isAuthenticated()">
+		User's Name: <span sec:authentication="name"></span> <br> Roles:
+		<span sec:authentication="principal.authorities"></span> <br>
+		<div th:fragment="logout">
+			<form action="#" th:action="@{/logout}" method="post">
+				<input type="submit" value="Logout" />
+			</form>
+		</div>
+	</div>
+	<div th:fragment="footer">
+<h6>Copyright @sheridan</h6>
+</div>
+</body>
+</html>

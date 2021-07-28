@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table border=1>
+<tr>
+<th th:each="s : ${cast.fields}" th:text="${s}" ></th>
+<tr>
+<tr th:each="se : ${sds.list}">
+<td th:text="${se.name}"></td>
+<td th:text="${se.cp}"></td>
+<td th:text="${se.sin}"></td>
+</tr>
+</table>
+<h2>Form to add person</h2>
+<form th:method="post" th:action="@{/list}" th:object="${cast}">
+
+Name:<input required type="text" th:field="${cast.name}"><br>
+Combat Power:<input required type="number" th:field="${cast.cp}"><br>
+Sin: 
+<select th:field="${cast.sin}">
+<option th:each="c : ${cast.sins}" th:value="${c}" th:text="${c}"></option>
+</select><br>
+<input type="submit" value="Deadly">
+</form>
+
+</body>
+</html>
