@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table border=1>
+<tr><th>Action</th><th>ID</th><th>Name</th><th>Email</th><th>Date</th><th>Time</th></tr>
+<tr th:each="a : ${appointments}">
+<td>
+<a href="" th:href="@{/delete/{id}(id=${a.id})}">Delete</a>
+<a href="" th:href="@{/edit/{id}(id=${a.id})}">edit</a>
+</td>
+<td th:text="${a.id}"></td>
+<td th:text="${a.firstName}"></td>
+<td th:text="${a.email}"></td>
+<td th:text="${a.appointmentDate}"></td>
+<td th:text="${a.appointmentTime}"></td>
+</tr>
+</table>
+</body>
+</html>
