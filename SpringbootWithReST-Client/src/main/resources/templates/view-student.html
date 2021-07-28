@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View Student</title>
+</head>
+<body>
+<h1>View Student</h1>
+<h3 th:text="|ID: ${student.id}|"></h3>
+<h3 th:text="|Name: ${student.name}|"></h3>
+<h3><a th:href="@{/view-students}">view all students</a></h3>
+</body>
+</html>

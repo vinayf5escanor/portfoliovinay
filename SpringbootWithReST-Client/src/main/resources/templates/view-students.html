@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View Students</title>
+<script th:src="@{/js/script.js}"></script>
+</head>
+<body>
+<h1>View Students</h1>
+<span style="color:red;" th:text="${session.msg}"></span>
+<br>
+<h3 th:each="stu : ${studentList}">
+<a href="#" th:onclick="'getStudent('+ ${stu.id} + ')'"
+th:text="${stu.name}"></a> <span th:id="'student' + ${stu.id}"></span>
+&nbsp;-&nbsp;<a th:href="@{/view-student/{id}(id=${stu.id})}">view</a>
+&nbsp;-&nbsp;<a th:href="@{/delete-student/{id}(id=${stu.id})}">delete</a>
+&nbsp;-&nbsp;<a th:href="@{/update-student/{id}(id=${stu.id})}">update</a>
+</h3>
+<h3><a th:href="@{/add-student}">add a student</a></h3>
+<h3><a th:href="@{/delete-all-students}">Delete All Students</a></h3>
+</body>
+</html>
