@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Page</title>
+</head>
+<body>
+<div th:replace="index.html :: header"></div>
+<form th:method="post" th:action="@{/addValue}" th:object="${student}">
+	Name: <input type="text" th:field="*{name}" ><br>
+	Course: <input type="text" th:field="*{course}" ><br>
+	Mark: <input type="number" th:field="*{mark}" ><br>
+	<input type="submit" value="ADD">
+	</form>
+	<br>
+	<div th:replace="index.html :: logout"></div>
+	<div th:replace="index.html :: footer"></div>
+</body>
+</html>
