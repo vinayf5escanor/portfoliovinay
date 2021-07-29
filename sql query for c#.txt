@@ -1,0 +1,31 @@
+CREATE DATABASE forprojects;
+
+CREATE TABLE movies  
+(  
+    MOVIEID int PRIMARY KEY NOT NULL  
+    ,NAME VARCHAR(50) NOT NULL  
+);
+
+CREATE TABLE users  
+(  
+    ID int PRIMARY KEY NOT NULL  
+    ,NAME VARCHAR(50) NOT NULL 
+	,PASS VARCHAR(50) NOT NULL 
+	,ROLES VARCHAR(50) NOT NULL 
+);
+
+INSERT INTO movies (NAME)
+VALUES ('AVENGER ENDGAME'),
+       ('THE CONJURING'),
+       ('AVENGER INFINTTY WAR'),
+       ('JOKER'),
+       ('JUSTICE LEAGUE'),
+       ('GODZILLA');
+
+INSERT INTO users (NAME,PASS,ROLES)
+VALUES ('USER1','123','user'),
+       ('ADMIN','123','admin'),
+       ('DarioGuelph','abcde','admin');
+
+
+
